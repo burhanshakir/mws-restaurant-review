@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=5.0" />
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="theme-color" content="#262932">
+  <link rel="manifest" href="/manifest.json">
+  <title>Restaurant Reviews</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1><a href="/">Restaurant Reviews</a></h1>
+    </nav>
+  </header>
+
+  <main id="maincontent">
+    <section id="map-container">
+      <div id="map" role="application" aria-label="Map with restaurants"></div>
+    </section>
+    <section>
+      <div class="filter-options">
+        <h2 id='filter-result-label'>Filter Results</h2>
+        <select id="neighborhoods-select" name="neighborhoods" role ="listbox" aria-labelledby="neighborhoods-label" onchange="updateRestaurants()">
+          <option value="all">All Neighborhoods</option>
+        </select>
+        <label id="neighborhoods-label" class="filter-label">by neighborhood</label>
+        <select id="cuisines-select" name="cuisines" role ="listbox" aria-labelledby="cuisines-label" onchange="updateRestaurants()">
+          <option value="all">All Cuisines</option>
+        </select>
+        <label id="cuisines-label" class="filter-label">by cuisine</label>
+      </div>
+      <ul id="restaurants-list"></ul>
+    </section>
+  </main>
+
+  <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/idb.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/indexDB.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD3ufM52fNack4Slc4NFeKe-i-zEwnce0&libraries=places&callback=initMap"></script>
+
+
+  <footer id="footer">
+    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
+
+</body>
+
+</html>

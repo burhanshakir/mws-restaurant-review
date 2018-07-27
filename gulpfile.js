@@ -112,7 +112,7 @@ gulp.task('extras', () => {
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', () => {
-  runSequence(['clean', 'wiredep'], ['css', 'js','sw', 'fonts'], () => {
+  runSequence(['clean'], ['css', 'js','sw', 'fonts'], () => {
     browserSync.init({
       notify: false,
       port: 8000,
